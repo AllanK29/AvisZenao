@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard Avis Résidences Zenao</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fa;
+}
+
+header{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+h1{
+    margin:0;
+}
+
+.container{
+    padding:20px;
+}
+
+.kpis{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.kpi-value{
+    font-size:32px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.green{
+    color:#22c55e;
+}
+
+.orange{
+    color:#f59e0b;
+}
+
+.red{
+    color:#ef4444;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#0f172a;
+    color:white;
+    padding:12px;
+    text-align:left;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+button{
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.booking{
+    background:#2563eb;
+    color:white;
+}
+
+.expedia{
+    background:#10b981;
+    color:white;
+}
+
+.pdf{
+    background:#f59e0b;
+    color:white;
+}
+
+.disabled{
+    background:#ccc;
+    cursor:not-allowed;
+}
+
+.search{
+    margin-top:20px;
+}
+
+.search input{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.analysis{
+    margin-top:25px;
+}
+
+.analysis ul{
+    line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📊 Dashboard Avis Résidences</h1>
+<p>Version de démonstration V1</p>
+</header>
+
+<div class="container">
+
+<div class="kpis">
+
+<div class="card">
+<h3>Résidences</h3>
+<div class="kpi-value">52</div>
+</div>
+
+<div class="card">
+<h3>Note moyenne</h3>
+<div class="kpi-value green">8.2 / 10</div>
+</div>
+
+<div class="card">
+<h3>Evolution</h3>
+<div class="kpi-value green">+0.3</div>
+</div>
+
+<div class="card">
+<h3>Avis analysés</h3>
+<div class="kpi-value">3452</div>
+</div>
+
+</div>
+
+<div class="card analysis">
+
+<h2>🤖 Analyse IA</h2>
+
+<h3>Forces</h3>
+<ul>
+<li>Personnel apprécié</li>
+<li>Bonne propreté générale</li>
+<li>Emplacements bien notés</li>
+</ul>
+
+<h3>Faiblesses</h3>
+<ul>
+<li>Confort variable selon les résidences</li>
+<li>Equipements parfois vieillissants</li>
+<li>Wifi signalé dans plusieurs avis</li>
+</ul>
+
+<h3>Actions prioritaires</h3>
+<ul>
+<li>Renforcer la qualité du wifi</li>
+<li>Moderniser certaines chambres</li>
+<li>Uniformiser les procédures d'accueil</li>
+</ul>
+
+<p>
+⚠️ Cette analyse utilise actuellement des données de démonstration.
+</p>
+
+</div>
+
+<div class="search">
+
+<input
+id="searchInput"
+type="text"
+placeholder="Rechercher une résidence..."
+>
+
+</div>
+
+<div class="card">
+
+<h2>Résidences</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Résidence</th>
+<th>Note</th>
+<th>Booking</th>
+<th>Expedia</th>
+<th>PDF</th>
+</tr>
+</thead>
+
+<tbody id="tableBody">
+
+<tr>
+<td>Zenao Alfortville</td>
+<td><span class="green">8.4</span></td>
+
+<td>
+<button class="booking">
+Booking
+</button>
+</td>
+
+<td>
+<button class="expedia">
+Expedia
+</button>
+</td>
+
+<td>
+<button class="pdf">
+Fiche
+</button>
+</td>
+</tr>
+
+<tr>
+<td>Zénao Anglet</td>
+
+<td>
+<span class="orange">7.9</span>
+</td>
+
+<td>
+<button class="disabled">
+N/A
+</button>
+</td>
+
+<td>
+<button class="disabled">
+N/A
+</button>
+</td>
+
+<td>
+<button class="pdf">
+Fiche
+</button>
+</td>
+</tr>
+
+<tr>
+<td>Zénao Challans</td>
+
+<td>
+<span class="green">8.8</span>
+</td>
+
+<td>
+<button class="booking">
+Booking
+</button>
+</td>
+
+<td>
+<button class="expedia">
+Expedia
+</button>
+</td>
+
+<td>
+<button class="pdf">
+Fiche
+</button>
+</td>
+</tr>
+
+<tr>
+<td>Zénao Strasbourg</td>
+
+<td>
+<span class="green">8.1</span>
+</td>
+
+<td>
+<button class="booking">
+Booking
+</button>
+</td>
+
+<td>
+<button class="expedia">
+Expedia
+</button>
+</td>
+
+<td>
+<button class="pdf">
+Fiche
+</button>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener(
+"keyup",
+function(){
+
+const filter =
+this.value.toLowerCase();
+
+const rows =
+document.querySelectorAll("#tableBody tr");
+
+rows.forEach(row => {
+
+const text =
+row.innerText.toLowerCase();
+
+row.style.display =
+text.includes(filter)
+? ""
+: "none";
+
+});
+
+}
+);
+
+</script>
+
+</body>
+</html>
